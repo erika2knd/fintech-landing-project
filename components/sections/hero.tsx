@@ -2,7 +2,7 @@ import Link from "next/link";
 export default function Hero() {
   return (
     <section
-      className="relative min-h-[90svh] w-full overflow-hidden bg-[url('/finora-hero.jpg')] bg-cover bg-center"
+      className="relative min-h-[100svh] w-full overflow-hidden bg-[url('/finora-hero.jpg')] bg-cover bg-center"
       aria-label="Empowering your financial journey"
     >
       <div className="pointer-events-none absolute inset-0 bg-black/30" aria-hidden />
