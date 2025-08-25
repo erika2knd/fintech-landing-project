@@ -1,6 +1,4 @@
 import Link from "next/link";
-import AnimatedButton from "./AnimatedButton";
-
 export default function Hero() {
   return (
     <section
@@ -22,25 +20,23 @@ export default function Hero() {
 
         <div className="grid items-center gap-8 md:grid-cols-[1.15fr_0.85fr]">
           <h1 className="text-5xl font-extrabold tracking-tight text-white leading-[1.05] sm:text-6xl md:text-7xl">
-            Empowering
+            Take Control 
             <br />
-            Your Financial
+            of Your Financial 
             <br />
-            Journey
+            Future
           </h1>
 
-          <div className="md:translate-y-6 md:justify-self-end">
+          <div className="md:translate-y-48 md:justify-self-end">
             <div className="max-w-sm text-white">
               <p className="text-base leading-relaxed text-white/90">
-                With Fynox, you gain a partner who ensures your money moves as
-                efficiently as you do—minimizing complexity and maximizing
-                potential.
+                We make managing your finances effortless—removing the stress, confusion, and wasted time—so you can focus on the goals, experiences, and opportunities that truly matter.
               </p>
 
               <div className="mt-5">
                 <Link
                   href="#get-started"
-                  className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-gray-900 shadow transition-transform duration-300 scale-100 hover:scale-105 hover:bg-white/90"
+                  className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-gray-900 shadow transition-transform duration-300 scale-100 hover:scale-105"
                 >
                   GET STARTED
                 </Link>

@@ -18,13 +18,12 @@ export default function Mission() {
         </span>
 
         <h2 className="mt-4 text-lg font-extrabold leading-tight sm:text-3xl md:text-5xl lg:text-5xl">
-          Fynox was founded with the mission
-          <br className="hidden md:block" />
-          to empower businesses by providing
+We exist to make finance work for you.          <br className="hidden md:block" />
+          Fynora turns traditional banking
           <br className="hidden md:block" />
           tailored financial solutions that simplify
           <br className="hidden md:block" />
-          the complexities of traditional banking.
+          powerful solutions built for modern businesses.
         </h2>
       </div>
     </section>

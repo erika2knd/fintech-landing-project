@@ -13,7 +13,7 @@ const BENEFITS: Benefit[] = [
 
 export default function Benefits() {
   return (
-    <section className="bg-gray-50 py-20">
+    <section id="benefits" className="bg-gray-50 py-20">
       <div className="mx-auto grid max-w-6xl items-start gap-12 px-6 md:grid-cols-2">
         <div>
           <span className="inline-block rounded-full bg-purple-100 px-4 py-1.5 text-xs font-semibold text-purple-800">Benefits</span>

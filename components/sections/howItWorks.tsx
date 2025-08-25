@@ -2,10 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 const STEPS = [
-  { title: "Sign Up", icon: "/step-1.png" },
-  { title: "Add Funds", icon: "/step-2.png" },
-  { title: "Explore Features", icon: "/step-3.png" },
-  { title: "Make Transactions", icon: "/step-4.png" },
+  { title: "Join in Minutes", icon: "/step-1.png" },
+  { title: "Top Up Instantly", icon: "/step-2.png" },
+  { title: "Discover Tools", icon: "/step-3.png" },
+  { title: "Transact with Ease", icon: "/step-4.png" },
 ];
 
 export default function HowItWorks() {
@@ -17,11 +17,10 @@ export default function HowItWorks() {
             How It Works?
           </span>
           <h2 className="mt-3 text-3xl font-extrabold text-gray-900 md:text-4xl">
-            Quick And Easy
+            Getting Started Is Simple
           </h2>
           <p className="mx-auto mt-2 max-w-xl text-sm text-gray-600">
-            Creating a Fynox account is simple. Easily top up, enjoy instant transfers,
-            and track transactions in real-time with seamless integration across major banks.
+            Open your account in minutes, fund it instantly, and start managing payments with ease. Real-time tracking and smooth bank integration make every step effortless.
           </p>
         </div>
 
@@ -44,7 +43,7 @@ export default function HowItWorks() {
         </div>
 
         <h3 className="mt-16 text-center text-3xl font-extrabold text-gray-900 md:mt-20 md:text-4xl">
-          Go Global with Fynox
+          Go Global with Fynora
         </h3>
 
         <div className="mt-8 grid gap-6 lg:grid-cols-[1.4fr_1fr]">
@@ -61,13 +60,10 @@ export default function HowItWorks() {
             </div>
             <article className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-black/5">
               <h4 className="text-lg font-semibold text-gray-900">
-                Take Your Business Global
-                <br /> with Finora Virtual Accountorb
+                Expand Your Business Worldwide <br /> with Fynora Virtual IBAN
               </h4>
               <p className="mt-3 text-sm leading-relaxed text-gray-600">
-                Streamline your cross-border payments effortlessly with a dedicated IBAN account tailored
-                for your business needs. Set up your IBAN today to revolutionize your payment processes.
-              </p>
+Break barriers and simplify cross-border payments with a dedicated IBAN account built for your business. Fast, reliable, and effortless—empowering you to grow globally with confidence.              </p>
               <div className="mt-5">
                 <Link
                   href="#get-started"
@@ -81,12 +77,10 @@ export default function HowItWorks() {
 
           <aside className="rounded-3xl bg-[#4d2a8a] p-6 text-white shadow-sm ring-1 ring-white/10">
             <h4 className="text-lg font-semibold">
-              Set Up Alternative
-              <br /> Payment Methods
+             Smarter Payment Options,<br /> Zero Hassle
             </h4>
             <p className="mt-3 text-sm text-white/80">
-              Manage your daily expenses easily—no more traditional banking hassles.
-            </p>
+Handle everyday expenses the modern way. Ditch the limitations of traditional banks and enjoy seamless alternative payment methods with Fynora.            </p>
 
             <div className="overflow-hidden rounded-2xl p-6">
               <Image

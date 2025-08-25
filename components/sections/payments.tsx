@@ -5,8 +5,8 @@ export default function Payments() {
     <section id="payments" className="bg-[#f3f4f6] py-20">
       <div className="mx-auto max-w-7xl rounded-3xl bg-white px-6 py-12 shadow-sm">
         <h2 className="text-center text-3xl font-extrabold leading-tight text-gray-900 md:text-4xl">
-          Running a business is demanding.<br className="hidden sm:block" />
-          <span className="block">Managing your payments shouldn’t be.</span>
+          Growing your business takes focus.<br className="hidden sm:block" />
+          <span className="block"> Handling payments should be simple.</span>
         </h2>
 
         <div className="relative mx-auto mt-14 flex max-w-3xl justify-center">

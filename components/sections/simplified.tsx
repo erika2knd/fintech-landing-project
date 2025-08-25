@@ -1,10 +1,10 @@
 import Image from "next/image";
 
 const VALUES = [
-  { title: "Globally Trusted" },
-  { title: "100% Compliance" },
-  { title: "Transparency You Can Trust" },
-  { title: "Security & Efficiency" },
+  { title: "Trusted Worldwide" },
+  { title: "Full Compliance" },
+  { title: "Transparent & Clear" },
+  { title: "Secure & Efficient" },
 ];
 
 export default function Simplified() {
@@ -23,18 +23,14 @@ export default function Simplified() {
 
       <div className="relative mx-auto max-w-7xl px-6 py-20 text-white">
         <div className="grid gap-6 md:grid-cols-[1.5fr_1fr] items-start">
-  {/* левый блок — заголовок */}
   <h2 className="text-3xl md:text-5xl font-extrabold leading-tight text-white">
-    Fynox Simplifies
-    <br /> Your Financial <br /> Journey!
+    Simplifying Finance.
+    <br /> Empowering Growth.
   </h2>
 
-  {/* правый блок — абзац */}
   <div className="flex md:justify-end">
     <p className="max-w-xs text-sm leading-relaxed text-white/90 text-right">
-      Fynox offers businesses easy access to personal IBAN accounts and secure
-      SEPA/SWIFT payments, prioritizing security with strict compliance and
-      real-time financial updates.
+      With Fynora, businesses gain instant access to IBAN accounts and seamless SEPA/SWIFT payments. Built on security, compliance, and transparency—so you can manage finances with confidence in real time.
     </p>
   </div>
 </div>

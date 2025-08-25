@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Tailored() {
   return (
-    <section className="bg-[#eef0f2] py-16 md:py-24">
+    <section id="contact" className="bg-[#eef0f2] py-16 md:py-24">
       <div className="mx-auto max-w-7xl rounded-3xl bg-white p-8 md:p-12 shadow-sm">
         <div className="grid gap-12 md:grid-cols-2 items-center">
           
@@ -12,12 +12,11 @@ export default function Tailored() {
             </span>
 
             <h2 className="mt-4 text-4xl font-extrabold text-gray-900 md:text-6xl">
-              Tailored <br /> Financial <br /> Solutions
+              Financial Solutions  <br /> Made for You
             </h2>
 
             <p className="mt-6 max-w-md text-sm leading-relaxed text-gray-600">
-              We know that one size doesn't fit all. That’s why we provide
-              customized payment solutions designed to fit your specific business needs.
+              Every business is unique. That’s why we design flexible payment solutions tailored to your goals, your industry, and your growth.
             </p>
 
             <button className="mt-8 inline-flex items-center justify-center rounded-full bg-gray-900 px-6 py-3 text-sm font-semibold text-white shadow hover:bg-gray-800">

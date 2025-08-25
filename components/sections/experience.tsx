@@ -11,15 +11,11 @@ export default function Experience() {
             </span>
 
             <p className="mt-6 max-w-md text-base text-gray-600">
-              At Fynox, we transform how you handle money. Our innovative
-              e-wallet is built to offer seamless convenience, bringing a range
-              of features that simplify your financial world and enhance your
-              everyday transactions.
+             At Fynora, we empower you to take control of your finances. Our next-gen e-wallet delivers speed, clarity, and seamless transactions, designed to simplify your financial life and unlock more freedom.
             </p>
 
             <h2 className="mt-10 text-3xl font-extrabold text-gray-900 md:text-4xl">
-              Experience the Freedom <br />
-              of Digital Payments
+              Your Money <br /> Made Smarter
             </h2>
           </div>
 

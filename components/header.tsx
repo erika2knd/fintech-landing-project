@@ -17,7 +17,7 @@ return (
 <li><Link href="#features" className="hover:text-white">Features</Link></li>
 <li><Link href="#how-it-works" className="hover:text-white">How It Works</Link></li>
 <li><Link href="#benefits" className="hover:text-white">Benefits</Link></li>
-<li><Link href="#contacts" className="hover:text-white">Contacts</Link></li>
+<li><Link href="#contact" className="hover:text-white">Contacts</Link></li>
 </ul>
 
 

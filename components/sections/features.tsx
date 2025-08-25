@@ -7,24 +7,24 @@ type Feature = {
 
 const FEATURES: Feature[] = [
   {
-    title: "Instant Internal Transfers",
+    title: "Instant Transfers",
     text:
-      "Move your money swiftly and effortlessly within the Fynox ecosystem. With our instant transfer feature, your funds are always right where you need them, exactly when you need them.",
+      "Move money at the speed of your business. No delays, no friction — just instant access whenever you need it.",
   },
   {
-    title: "Secure and Reliable",
+    title: "Ironclad Security",
     text:
-      "Trust is the bedrock of Fynox. We prioritize your financial security by employing advanced encryption and robust security protocols to protect your transactions and personal data.",
+      "Your money deserves the highest protection. With Fynora, every transaction is shielded by cutting-edge encryption and rock-solid reliability.",
   },
   {
-    title: "Intuitive User Interface",
+    title: "Smart & Simple Interface",
     text:
-      "Managing your digital finances is now simpler than ever. Our easy-to-navigate interface is designed to cater to everyone, from experienced investors to those just beginning their e-money journey.",
+      "Finance shouldn’t feel complicated. Our sleek, intuitive design makes it effortless to stay in control — whether you’re a beginner or a pro.",
   },
   {
-    title: "Multi-Currency Flexibility",
+    title: "Global Currency Freedom",
     text:
-      "Navigate the global market seamlessly. Fynox supports a variety of currencies, allowing you to transact across borders effortlessly, without the hassle of conversions.",
+      "Think beyond borders. Pay, send, and receive in multiple currencies with zero hassle and total flexibility.",
   },
 ];
 

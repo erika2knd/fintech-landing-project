@@ -2,14 +2,14 @@ import Image from "next/image";
 
 const FEATURES = [
   {
-    title: "Intuitive User Interface",
+    title: "Smart, Simple Interface",
     description:
-      "Perfectly designed for both emerging startups and established corporations around the world.",
+      "Designed for every stage—from bold startups to global enterprises.",
   },
   {
-    title: "Tailored Financial Solutions",
+    title: "Customized Solutions",
     description:
-      "Customized to meet your exact needs, no matter your industry or location.",
+      "Flexible financial tools built to match your industry, scale, and ambitions.",
   },
 ];
 
@@ -18,20 +18,19 @@ export default function Personalized() {
     <section className="bg-[#eef0f2] py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-6">
         <h2 className="text-center text-3xl font-extrabold text-gray-900 md:text-5xl">
-          We deliver personalized
-          <br className="hidden md:block" /> solutions to meet your needs
+          Personalized Finance,
+          <br className="hidden md:block" /> Built Around You
         </h2>
 
         <div className="mt-10 rounded-[28px] bg-[#4d2a8a] p-6 md:p-10 shadow-sm ring-1 ring-white/10">
           <div className="grid items-center gap-8 md:grid-cols-[1.1fr_1fr]">
             <div className="text-white">
               <h3 className="text-xl md:text-2xl font-semibold">
-                Enhance Your Business
-                <br /> with a Fynox Account
+                Power Your Business
+                <br /> with a Fynora Account
               </h3>
               <p className="mt-4 max-w-md text-sm leading-relaxed text-white/85">
-                Explore e-money services tailored specifically for you, and take the next step
-                in expanding your business on a global scale.
+                Unlock e-money services crafted to fit your unique goals. From seamless transactions to global expansion, Fynox gives you the tools to grow with confidence.
               </p>
             </div>
 
