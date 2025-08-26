@@ -1,42 +1,133 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
 
+const NAV = [
+  { href: "#experience", label: "About" },
+  { href: "#features", label: "Features" },
+  { href: "#how-it-works", label: "How It Works" },
+  { href: "#benefits", label: "Benefits" },
+  { href: "#contact", label: "Contacts" },
+];
 
 export default function Header() {
-return (
-<header className="absolute inset-x-0 top-0 z-50">
-<div className="mx-auto max-w-7xl px-6">
-<nav className="flex h-20 items-center justify-between">
-<Link href="/" className="inline-flex items-center gap-2">
-<span className="text-2xl font-bold text-white">Fynora</span>
-</Link>
+  const [open, setOpen] = React.useState(false);
+  const [scrolled, setScrolled] = React.useState(false);
 
+  React.useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
-<ul className="hidden md:flex items-center gap-8 text-sm text-white/80">
-<li><Link href="#experience" className="hover:text-white">About</Link></li>
-<li><Link href="#features" className="hover:text-white">Features</Link></li>
-<li><Link href="#how-it-works" className="hover:text-white">How It Works</Link></li>
-<li><Link href="#benefits" className="hover:text-white">Benefits</Link></li>
-<li><Link href="#contact" className="hover:text-white">Contacts</Link></li>
-</ul>
+  const textPrimary = scrolled ? "text-gray-900" : "text-white";
+  const textSecondary = scrolled ? "text-gray-600" : "text-white/80";
+  const chipBg = scrolled ? "bg-gray-900 text-white hover:bg-black" : "bg-white text-gray-900 hover:bg-white/90";
+  const ghostBg = scrolled ? "bg-gray-900/5 hover:bg-gray-900/10" : "bg-white/15 hover:bg-white/25";
 
+  return (
+    <header className={`fixed inset-x-0 top-0 z-50 transition-colors ${scrolled ? "backdrop-blur supports-[backdrop-filter]:bg-white/70 border-b border-black/5" : "bg-transparent"}`}>
+      <div className="mx-auto max-w-7xl px-6 lg:px-24">
+        <nav className="flex h-16 md:h-20 items-center justify-between" aria-label="Primary">
+          <Link href="/" className="inline-flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-gray-900/40 rounded">
+            <span className={`text-2xl font-extrabold ${textPrimary}`}>Fynora</span>
+          </Link>
 
-<div className="flex items-center gap-3">
-<Link
-href="#signup"
-className="hidden sm:inline-flex items-center rounded-full bg-white/15 px-4 py-2 text-sm font-medium text-white backdrop-blur hover:bg-white/25"
->
-Sign Up
-</Link>
-<Link
-href="/login"
-className="inline-flex items-center rounded-full bg-white px-4 py-2 text-sm font-semibold text-gray-900 hover:bg-white/90"
->
-Log In
-</Link>
-</div>
-</nav>
-</div>
-</header>
-);
+          <ul className={`hidden md:flex items-center gap-8 text-sm ${textSecondary}`}>
+            {NAV.map((item) => (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  className={`hover:${scrolled ? "text-gray-900" : "text-white"} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-gray-900/40 rounded`}
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          <div className="flex items-center gap-3">
+            <Link
+              href="#signup"
+              className={`hidden sm:inline-flex items-center rounded-full px-4 py-2 text-sm font-medium ${scrolled ? "text-gray-900" : "text-white"} ${ghostBg} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-900/40 focus-visible:ring-offset-2`}
+            >
+              Sign Up
+            </Link>
+
+            <Link
+              href="/login"
+              className={`hidden md:inline-flex items-center rounded-full px-4 py-2 text-sm font-semibold ${chipBg} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-900/40 focus-visible:ring-offset-2`}
+            >
+              Log In
+            </Link>
+
+            <button
+              type="button"
+              aria-label="Toggle menu"
+              aria-expanded={open}
+              aria-controls="mobile-menu"
+              onClick={() => setOpen((v) => !v)}
+              className={`md:hidden inline-flex items-center justify-center rounded-full p-2 ${scrolled ? "text-gray-900 hover:bg-gray-900/10" : "text-white hover:bg-white/20"} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-900/40 focus-visible:ring-offset-2`}
+            >
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                {open ? (
+                  <path strokeWidth="2" strokeLinecap="round" d="M6 6l12 12M18 6L6 18" />
+                ) : (
+                  <path strokeWidth="2" strokeLinecap="round" d="M3 6h18M3 12h18M3 18h18" />
+                )}
+              </svg>
+            </button>
+          </div>
+        </nav>
+      </div>
+
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            id="mobile-menu"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.18 }}
+            className={`md:hidden border-t ${scrolled ? "bg-white/90 backdrop-blur border-black/5" : "bg-black/60 backdrop-blur border-white/10"}`}
+          >
+            <div className="mx-auto max-w-7xl px-6 lg:px-24 py-4">
+              <ul className="flex flex-col gap-2">
+                {NAV.map((item) => (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      onClick={() => setOpen(false)}
+                      className={`block rounded-xl px-4 py-3 text-sm font-medium ${scrolled ? "text-gray-900 hover:bg-gray-900/5" : "text-white hover:bg-white/10"} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-900/40`}
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+                <li className="flex gap-2 pt-2">
+                  <Link
+                    href="/login"
+                    onClick={() => setOpen(false)}
+                    className={`flex-1 inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold ${chipBg} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-900/40`}
+                  >
+                    Log In
+                  </Link>
+                  <Link
+                    href="#signup"
+                    onClick={() => setOpen(false)}
+                    className={`flex-1 inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-medium ${scrolled ? "text-gray-900 bg-gray-900/5 hover:bg-gray-900/10" : "text-white bg-white/15 hover:bg-white/25"} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-900/40`}
+                  >
+                    Sign Up
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </header>
+  );
 }
