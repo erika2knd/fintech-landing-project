@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import CookieConsent from "@/components/CookieConsent";
+import { AuthProvider } from "@/components/Auth";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,10 +21,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <AuthProvider>
         <Header />
+        
         {children}
         <CookieConsent />
+        
         <Footer />
+        </AuthProvider>
       </body>
     </html>
   );

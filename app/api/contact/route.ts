@@ -3,20 +3,24 @@ import { Resend } from "resend";
 import { z } from "zod";
 
 const schema = z.object({
-  name: z.string().min(1).max(100),
-  email: z.string().email(),
-  message: z.string().min(1).max(5000),
-  company: z.string().max(120).optional(),
+  name: z.string().min(1, "Please enter your name").max(100, "Name is too long"),
+  email: z.string().email("Please enter a valid email"),
+  message: z.string().min(1, "Please write a message").max(5000, "Message is too long"),
+  company: z.string().max(120, "Company is too long").optional(),
   website: z.string().max(0).optional(), 
 });
-
 
 export async function POST(req: Request) {
   try {
     const body = await req.json();
     const parsed = schema.safeParse(body);
+
     if (!parsed.success) {
-      return NextResponse.json({ ok: false, error: "Invalid input" }, { status: 400 });
+      const fieldErrors = parsed.error.flatten().fieldErrors;
+      return NextResponse.json(
+        { ok: false, error: "Validation failed", fieldErrors },
+        { status: 400 }
+      );
     }
 
     const { name, email, message, company, website } = parsed.data;
@@ -37,18 +41,16 @@ export async function POST(req: Request) {
     `;
 
     const apiKey = process.env.RESEND_API_KEY;
-
     if (!apiKey) {
       console.warn("[contact] RESEND_API_KEY is missing — skipping real send.");
       return NextResponse.json({ ok: true, dev: true });
     }
 
     const resend = new Resend(apiKey);
-
     await resend.emails.send({
-      from: process.env.EMAIL_FROM!,     
-      to: process.env.EMAIL_TO!,         
-      replyTo: email,                     
+      from: process.env.EMAIL_FROM!,
+      to: process.env.EMAIL_TO!,
+      replyTo: email,
       subject,
       html,
     });

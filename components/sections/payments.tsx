@@ -8,7 +8,7 @@ export default function Payments() {
     <section id="payments" className="bg-[#f3f4f6]">
       <div className="mx-auto max-w-7xl px-6 lg:px-24 py-24">
         <div className="rounded-3xl bg-white p-8 sm:p-12 shadow-sm">
-          <h2 className="text-center text-3xl font-extrabold leading-tight text-gray-900 md:text-4xl">
+          <h2 className="text-center text-xl md:text-3xl font-extrabold leading-tight text-gray-900 md:text-4xl">
             Growing your business takes focus.
             <br className="hidden sm:block" />
             <span className="block">Handling payments should be simple.</span>

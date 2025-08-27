@@ -50,7 +50,7 @@ export default function Personalized() {
                 </div>
               </div>
 
-              <div className="absolute -left-20 -top-[-50px] hidden md:block">
+              <div className="absolute -left-20 -top-[-60px] hidden md:block">
                 <div className="relative w-[220px] aspect-[11/7] overflow-hidden rounded-xl bg-white/10 backdrop-blur-md shadow-lg ring-1 ring-white/20">
                   <Image
                     src="/card.png"

@@ -75,7 +75,7 @@ export default function HowItWorks() {
               </p>
               <div className="mt-5">
                 <Link
-                  href="#get-started"
+                  href="/contact"
                   className="inline-flex items-center rounded-full bg-gray-900 px-5 py-2 text-sm font-semibold text-white transition hover:bg-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-900/80 focus-visible:ring-offset-2 focus-visible:ring-offset-white transition-transform scale-100 hover:scale-105"
                 >
                   Get Consultation
@@ -94,7 +94,7 @@ export default function HowItWorks() {
             </p>
 
             <div className="mt-6 rounded-2xl p-4">
-              <div className="mx-auto size-40 sm:size-48 md:size-56 lg:size-60">
+              <div className="mx-auto size-20 sm:size-32 md:size-56 lg:size-60">
                 <div className="relative h-full w-full">
                   <Image
                     src="/orb.png"

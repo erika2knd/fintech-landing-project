@@ -3,13 +3,14 @@
 import React from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import HeaderAuthControls from "@/components/HeaderAuthControls"; 
 
 const NAV = [
   { href: "#experience", label: "About" },
   { href: "#features", label: "Features" },
   { href: "#how-it-works", label: "How It Works" },
   { href: "#benefits", label: "Benefits" },
-  { href: "#contact", label: "Contacts" },
+  { href: "/contact", label: "Contacts" }, 
 ];
 
 export default function Header() {
@@ -25,14 +26,21 @@ export default function Header() {
 
   const textPrimary = scrolled ? "text-gray-900" : "text-white";
   const textSecondary = scrolled ? "text-gray-600" : "text-white/80";
-  const chipBg = scrolled ? "bg-gray-900 text-white hover:bg-black" : "bg-white text-gray-900 hover:bg-white/90";
-  const ghostBg = scrolled ? "bg-gray-900/5 hover:bg-gray-900/10" : "bg-white/15 hover:bg-white/25";
 
   return (
-    <header className={`fixed inset-x-0 top-0 z-50 transition-colors ${scrolled ? "backdrop-blur supports-[backdrop-filter]:bg-white/70 border-b border-black/5" : "bg-transparent"}`}>
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-colors ${
+        scrolled
+          ? "backdrop-blur supports-[backdrop-filter]:bg-white/70 border-b border-black/5"
+          : "bg-transparent"
+      }`}
+    >
       <div className="mx-auto max-w-7xl px-6 lg:px-24">
         <nav className="flex h-16 md:h-20 items-center justify-between" aria-label="Primary">
-          <Link href="/" className="inline-flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-gray-900/40 rounded">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-gray-900/40 rounded"
+          >
             <span className={`text-2xl font-extrabold ${textPrimary}`}>Fynora</span>
           </Link>
 
@@ -50,19 +58,7 @@ export default function Header() {
           </ul>
 
           <div className="flex items-center gap-3">
-            <Link
-              href="#signup"
-              className={`hidden sm:inline-flex items-center rounded-full px-4 py-2 text-sm font-medium ${scrolled ? "text-gray-900" : "text-white"} ${ghostBg} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-900/40 focus-visible:ring-offset-2`}
-            >
-              Sign Up
-            </Link>
-
-            <Link
-              href="/login"
-              className={`hidden md:inline-flex items-center rounded-full px-4 py-2 text-sm font-semibold ${chipBg} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-900/40 focus-visible:ring-offset-2`}
-            >
-              Log In
-            </Link>
+            <HeaderAuthControls scrolled={scrolled} />
 
             <button
               type="button"
@@ -70,7 +66,9 @@ export default function Header() {
               aria-expanded={open}
               aria-controls="mobile-menu"
               onClick={() => setOpen((v) => !v)}
-              className={`md:hidden inline-flex items-center justify-center rounded-full p-2 ${scrolled ? "text-gray-900 hover:bg-gray-900/10" : "text-white hover:bg-white/20"} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-900/40 focus-visible:ring-offset-2`}
+              className={`md:hidden inline-flex items-center justify-center rounded-full p-2 ${
+                scrolled ? "text-gray-900 hover:bg-gray-900/10" : "text-white hover:bg-white/20"
+              } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-900/40 focus-visible:ring-offset-2`}
             >
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                 {open ? (
@@ -92,7 +90,9 @@ export default function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.18 }}
-            className={`md:hidden border-t ${scrolled ? "bg-white/90 backdrop-blur border-black/5" : "bg-black/60 backdrop-blur border-white/10"}`}
+            className={`md:hidden border-t ${
+              scrolled ? "bg-white/90 backdrop-blur border-black/5" : "bg-black/60 backdrop-blur border-white/10"
+            }`}
           >
             <div className="mx-auto max-w-7xl px-6 lg:px-24 py-4">
               <ul className="flex flex-col gap-2">
@@ -101,27 +101,16 @@ export default function Header() {
                     <Link
                       href={item.href}
                       onClick={() => setOpen(false)}
-                      className={`block rounded-xl px-4 py-3 text-sm font-medium ${scrolled ? "text-gray-900 hover:bg-gray-900/5" : "text-white hover:bg-white/10"} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-900/40`}
+                      className={`block rounded-xl px-4 py-3 text-sm font-medium ${
+                        scrolled ? "text-gray-900 hover:bg-gray-900/5" : "text-white hover:bg-white/10"
+                      } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-900/40`}
                     >
                       {item.label}
                     </Link>
                   </li>
                 ))}
-                <li className="flex gap-2 pt-2">
-                  <Link
-                    href="/login"
-                    onClick={() => setOpen(false)}
-                    className={`flex-1 inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold ${chipBg} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-900/40`}
-                  >
-                    Log In
-                  </Link>
-                  <Link
-                    href="#signup"
-                    onClick={() => setOpen(false)}
-                    className={`flex-1 inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-medium ${scrolled ? "text-gray-900 bg-gray-900/5 hover:bg-gray-900/10" : "text-white bg-white/15 hover:bg-white/25"} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-900/40`}
-                  >
-                    Sign Up
-                  </Link>
+                <li className="pt-2">
+                  <HeaderAuthControls scrolled={scrolled} variant="mobile" />
                 </li>
               </ul>
             </div>
@@ -131,3 +120,4 @@ export default function Header() {
     </header>
   );
 }
+
