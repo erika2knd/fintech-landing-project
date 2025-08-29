@@ -80,7 +80,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       return { ok: false as const, error: "Incorrect email or password" };
     }
     setUser({ name: u.name, email: u.email });
-    writeUser(u); // оповестим другие вкладки
+    writeUser(u); 
     return { ok: true as const };
   }, []);
 

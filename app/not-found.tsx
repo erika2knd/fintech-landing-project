@@ -11,7 +11,7 @@ export default function NotFound() {
       <Player
         autoplay
         loop
-        src="/404.json"                 // берём файл из /public по URL
+        src="/404.json"                
         className="w-72 h-72 md:w-96 md:h-96"
       />
 
