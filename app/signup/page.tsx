@@ -35,7 +35,7 @@ export default function SignUpPage() {
       <div className="absolute inset-0 -z-10 bg-[url('/finora-hero.jpg')] bg-cover bg-center" />
       <div className="absolute inset-0 -z-10 bg-black/50" />
 
-      <div className="relative mx-auto max-w-md px-6 py-24 text-white">
+      <div className="relative mx-auto max-w-md px-6 py-48 text-white">
         <h1 className="text-3xl font-extrabold">Create your account</h1>
         <p className="mt-2 text-white/80 text-sm">Demo signup — data stays in your browser only.</p>
 

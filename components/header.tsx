@@ -49,7 +49,7 @@ export default function Header() {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className={`hover:${scrolled ? "text-gray-900" : "text-white"} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-gray-900/40 rounded`}
+                  className={`${scrolled ? "hover:text-gray-900" : "hover:text-white"} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-gray-900/40 rounded`}
                 >
                   {item.label}
                 </Link>

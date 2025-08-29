@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useAuth } from "./Auth";
+import { useAuth } from "@/components/Auth";
 
 type Props = {
   scrolled?: boolean;
